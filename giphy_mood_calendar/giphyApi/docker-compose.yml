@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  giphy_calendar_db:
+    image: mdillon/postgis:9.6-alpine
+    environment:
+      POSTGRES_PASSWORD: 'giphy'
+      POSTGRES_USER: giphy
+      POSTGRES_DB: giphy_calendar_db
+    volumes:
+      - '$PWD/giphy_calendar_db:/var/lib/postgresql/data'
+    ports:
+      - 5432:5432

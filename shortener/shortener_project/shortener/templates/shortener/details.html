@@ -1,0 +1,11 @@
+<h1>URL SHORTENER</h1>
+
+<div style="display: flex;">
+    <p style="margin-right: 20px"><strong>Original url:</strong></p>
+    <p>{{url.long_url}}</p>
+</div>
+
+<div style="display: flex;">
+    <p style="margin-right: 40px"><strong>Short url:</strong></p>
+    <p><a href="{% url 'shortener:redirect' url.short_code %}">http://127.0.0.1:8000/shortener/{{url.short_code}}</a></p>
+</div>

@@ -1,0 +1,12 @@
+<h1>Shorten your url</h1>
+{% if messages %}
+{% for message in messages %}
+<p {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</p>
+{% endfor %}
+{% endif %}
+{{text}}
+<form action="{% url 'shortener:post' %}" method="post">
+    {% csrf_token %}
+    <input type="url" name="long_url" id="long_url" placeholder="Your url">
+    <input type="submit" name="shortener_submit" id="shortener_submit" value="Shorten">
+</form>
